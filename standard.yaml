@@ -1,0 +1,27 @@
+apiVersion: run.tanzu.vmware.com/v1alpha1       #TKGs API endpoint
+kind: TanzuKubernetesCluster
+metadata:
+  name: napp-standard-01                        #TKGs cluster name
+  namespace: nsx-01                             #TKGs namespace
+spec:
+  distribution:
+    version: v1.21.6                            #Latest TKR
+  topology:
+    controlPlane:
+      count: 1                                  #number of control plane nodes
+      class: guaranteed-medium                  #vmclass for control plane nodes
+      storageClass: vsan-default-storage-policy #storageclass for control plane
+      volumes:
+        - name: etcd
+          mountPath: /var/lib/etcd
+          capacity:
+          storage: 64Gi
+      workers:
+        count: 3                                  #number of worker nodes
+        class: napp-standard                      #vmclass for worker nodes
+        storageClass: vsan-default-storage-policy #storageclass for worker nodes
+        volumes:
+          - name: containerd
+            mountPath: /var/lib/containerd
+            capacity:
+            storage: 64Gi
