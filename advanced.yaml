@@ -17,8 +17,8 @@ spec:
           capacity:
           storage: 64Gi
       workers:
-        count: 3                                  #number of worker nodes
-        class: napp-advanced                      #vmclass for worker nodes
+        count: 3                                  #number of adv worker nodes
+        class: napp-advanced                      #vmclass for adv worker nodes
         storageClass: vsan-default-storage-policy #storageclass for worker nodes
         volumes:
           - name: containerd
