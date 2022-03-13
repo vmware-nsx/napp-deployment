@@ -6,3 +6,5 @@ Includes sample files for NAPP on:
 - vSphere with Tanzu (TKGs)
 - Tanzu Community Edition
 - Upstream K8s
+
+These are intended for references when using the NAPP Deployment Guide or Automation.
