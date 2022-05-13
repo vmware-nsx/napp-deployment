@@ -16,12 +16,12 @@ spec:
           mountPath: /var/lib/etcd
           capacity:
           storage: 64Gi
-      workers:
-        count: 3                                  #number of std worker nodes
-        class: napp-standard                      #vmclass for std worker nodes
-        storageClass: vsan-default-storage-policy #storageclass for worker nodes
-        volumes:
-          - name: containerd
-            mountPath: /var/lib/containerd
-            capacity:
-            storage: 64Gi
+    workers:
+      count: 3                                  #number of std worker nodes
+      class: napp-standard                      #vmclass for std worker nodes
+      storageClass: vsan-default-storage-policy #storageclass for worker nodes
+      volumes:
+        - name: containerd
+          mountPath: /var/lib/containerd
+          capacity:
+          storage: 64Gi
